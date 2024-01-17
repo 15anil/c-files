@@ -14,6 +14,7 @@ void fib(int n){
 }
 int main(){
     int n;
+    cout<<"enter the value of n: "<<endl;
     cin>>n;
     fib(n);
 

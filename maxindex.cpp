@@ -1,17 +1,10 @@
-#include<iostream>
-using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    int mx = INT_MIN;
-    int array[n];
-    for(int i=0;i<n;i++){
-        cin>>array[i];
+#include <iostream>
+    using namespace std;
+    int main()
+    {
+        int n = 5;
+        void *p = &n;
+        int *pi = static_cast<int*>(p);
+        cout << *pi << endl;
+        return 0;
     }
-    for(int i=0;i<n;i++){
-        mx = max(mx,array[i]);
-        cout<<mx<<" ";
-    }
-    return 0;
-
-}

@@ -1,6 +1,9 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
+//encapsulation refers to grouping of the attributes and functions into a single entity called as a class
+//access to the internal details of the class are controlled through the access specifiers
+//the main purpose of the encapsulation is to hide the internal representation of the class
 class encapsulation{
     private:
         string name;
