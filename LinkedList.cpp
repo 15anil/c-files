@@ -79,18 +79,48 @@ void findMiddle(node* head){
     }
     cout<<"middle element is: "<<slowPtr->data<<endl;
 }
+bool LinkedListCycle(node* head){
+    if(head == NULL){
+        cout<<"empty list"<<endl;
+        node* slowPtr = head;
+        node* fastPtr = head;
+        while(fastPtr && fastPtr->next){
+            slowPtr = slowPtr->next;
+            fastPtr = fastPtr->next->next;
+            if(slowPtr == fastPtr){
+                return true;
+                cout<<"there is a cycle"<<endl;
+            }
+        }
+        return false;
+        cout<<"there is no cycle"<<endl;
+    }
+}
 int main(){
     node* head = NULL;
     insertAtTail(head, 1);
     insertAtTail(head, 2);
     insertAtTail(head, 3);
     insertAthead(head, 4);
+    insertAthead(head,5);
+    insertAtTail(head, 6);
+    insertAtTail(head, 7);
+    insertAtTail(head, 8);
+    insertAthead(head, 9);
+    insertAthead(head,10);
+    
+
 
     // Call the function to find and print the middle element
     findMiddle(head);
 
     // Display the linked list
     display(head);
+    if (LinkedListCycle(head))
+        cout << "There is a cycle in the linked list" << endl;
+    else
+        cout << "There is no cycle in the linked list" << endl;
+
 
     // Free the memory by deleting the remaining nodes
     while (head != NULL) {

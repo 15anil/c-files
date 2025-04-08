@@ -1,10 +1,22 @@
 #include<iostream>
 #include<string>
-#include<algorithm>
 using namespace std;
+bool is_plainfrome(const string& s){
+    int left = 0;
+    int right = s.length()-1;
+    while(left<right){
+        if(s[left] != s[right]){
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
 int main(){
-    //using getline function it prints complete string
-    string str = "asdasadfadbfdbdbhreqweqf";
-    sort(str.begin(),str.end());//to sort a string
-    cout<<str<<endl;
+    string s1 = "radar";
+    string s2 = "hello";
+    cout<<boolalpha;
+    cout<<is_plainfrome(s1)<<endl;
+    cout<<is_plainfrome(s2)<<endl;
 }
